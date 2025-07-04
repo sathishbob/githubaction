@@ -3,7 +3,7 @@ name: Schedule
 on:
   schedule:
     # runs every 2 mins
-    - cron: '*/2 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   scheduled:
