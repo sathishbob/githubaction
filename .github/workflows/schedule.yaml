@@ -1,0 +1,20 @@
+name: Schedule
+
+on:
+  schedule:
+    # runs every 2 mins
+    - cron: '*/2 * * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo
+        uses: action/checkout@v4
+
+      - name: show Current time
+        run: echo "Current time is $(date)"
+
+      - name: Trigger nightly deploy
+        run: echo "Triggereing deployment"
