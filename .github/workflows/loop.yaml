@@ -11,9 +11,12 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: List and loop over file
+      - name: loop with condition
         run: |
-          echo "looping through js file"
-          for file in $(find . -name "*.js"); do
-            echo "processing $file"
+          for env in dev stage prod; do
+            if [ "$env" != "dev" ]; then
+              echo "Deploying to $env"
+            else
+              echo "Skipping $env"
+            fi
           done
