@@ -1,0 +1,13 @@
+name: variables
+
+on:
+  workflow_dispatch:
+
+jobs:
+  variables:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print default variables
+        run: printenv
+
