@@ -11,7 +11,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.input.deploy_prod == 'true' }}
+    if: ${{ github.event.inputs.deploy_prod == 'true' }}
 
     steps:
       - name: Checkout Code
