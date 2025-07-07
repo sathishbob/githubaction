@@ -1,0 +1,19 @@
+FROM node:18
+
+WORKDIR /app
+
+ARG NODE_ENV
+ENV NODE_ENV=$NODE_ENV
+
+ARG NODE_USE
+ENV NODE_USE=$NODE_USE
+
+ARG API_KEY
+ENV API_KEY=$API_KEY
+
+COPY . .
+RUN npm install
+
+CMD ["node", "index.js"]
+
+
