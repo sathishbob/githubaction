@@ -20,7 +20,7 @@ jobs:
 
       - name: Build docker image using secrets and variables
         run: |
-          docker build --build-arg NODE_USE=$(( vars.NODE_USE }} --build-arg NODE_ENV=${{ vars.NODE_ENV }} --build-arg API_KEY=${{ secrets.API_KEY }} -t ${{ secrets.DOCKER_USERNAME }}/my-node-app:${{ github.run_id }}
+          docker build --build-arg NODE_USE=${{ vars.NODE_USE }} --build-arg NODE_ENV=${{ vars.NODE_ENV }} --build-arg API_KEY=${{ secrets.API_KEY }} -t ${{ secrets.DOCKER_USERNAME }}/my-node-app:${{ github.run_id }}
 
       - name: Push Docker image
         run: |
