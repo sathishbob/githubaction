@@ -1,0 +1,22 @@
+name: Input From User
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_prod:
+        description: 'Do you want to deploy to production?'
+        required: true
+        default: 'false'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.input.deploy_prod == 'true' }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Production
+        run: |
+          echo "Deploying to production"
