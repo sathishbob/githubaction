@@ -1,0 +1,19 @@
+name: Loop over files
+
+on:
+  workflow_dispatch:
+
+jobs:
+  loop-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: List and loop over file
+        run: |
+          echo "looping through js file"
+          for file in $(find . -name "*.js"); do
+            echo "processing $file"
+          done
